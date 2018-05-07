@@ -1,0 +1,39 @@
+>hackrf_transfer -t gpssim.bin -f 1575420000 -s 2600000 -a 1 -x 40
+call hackrf_sample_rate_set(2600000 Hz/2.600 MHz)
+call hackrf_baseband_filter_bandwidth_set(2500000 Hz/2.500 MHz)
+call hackrf_set_freq(1575420000 Hz/1575.420 MHz)
+call hackrf_set_amp_enable(1)
+Stop with Ctrl-C
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.5 MiB / 1.014 sec =  5.4 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.5 MiB / 1.014 sec =  5.4 MiB/second
+ 5.0 MiB / 1.000 sec =  5.0 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+ 5.5 MiB / 1.014 sec =  5.4 MiB/second
+ 5.0 MiB / 1.001 sec =  5.0 MiB/second
+ 5.5 MiB / 1.014 sec =  5.4 MiB/second
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+Caught signal 0
+ 5.2 MiB / 1.014 sec =  5.2 MiB/second
+
+User cancel, exiting...
+Total time: 24.30984 s
+hackrf_stop_tx() done
+hackrf_close() done
+hackrf_exit() done
+fclose(fd) done
+exit
