@@ -2,7 +2,35 @@
 
 GPS-SIM is designed to use the HackRF to simulate GPS. This is a specific application the the GPS-SDR-SIM found at [osqzss/gps-sdr-sim](https://github.com/osqzss/gps-sdr-sim)
 
+## Step 1 - Build Path to Simulate
 
+### Export KML file from Google Maps
+
+If trasnmitting a static location, skip to Step 3.
+
+Decide on a starting point and a destination to enter into [Google Maps](https://mymaps.google.com).
+
+Instructions on how to export a KML file from a route built on Google Maps can be found [here](https://support.google.com/mymaps/answer/3109452?co=GENIE.Platform%3DDesktop&hl=en).
+
+## Step 2 - Converting KML to CSV
+### KML to NMEA .TXT
+
+Labsat has a [Free GPS NMEA Simulator Prgram](https://www.labsat.co.uk/index.php/en/free-gps-nmea-simulator-software) that can be used to convert the KML file produced in Step 1 to a .txt file containing NMEA data.
+
+The process for this is simple. Open the program, load the KML file using the GUI, and enter a few desired options.
+Set the output rate to 10Hz. You can change how long the path is stationary at the start of the data as well as at the end. You can also change the Ma Speed in km/h.
+
+### NMEA .TXT to .CSV
+#### This step may be able to be skipped by using the -g option in Step 3 and using the .txt file generated above. However, this was not thoroughly tested.
+##### Satgen folder contains files needed for creating csv from NMEA txt file
+
+The nmea2um.c file must be compiled, then the usage is simple as described below.
+
+```
+nmea2um <nmea_txt_file> <user_motion_csv_file>
+```
+
+## Step 3 - Generate BIN file to Transmit
 ### Building with GCC
 
 ```
@@ -10,7 +38,6 @@ $ gcc gpssim.c -lm -O3 -o gps-sdr-sim
 ```
 
 ### Generating the GPS signal file
-##### See satgen folder for creating csv from NMEA txt file
 
 A user-defined trajectory can be specified in either a CSV file, which contains 
 the Earth-centered Earth-fixed (ECEF) user positions, or an NMEA GGA stream.
