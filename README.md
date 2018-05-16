@@ -10,6 +10,7 @@ $ gcc gpssim.c -lm -O3 -o gps-sdr-sim
 ```
 
 ### Generating the GPS signal file
+##### See satgen folder for creating csv from NMEA txt file
 
 A user-defined trajectory can be specified in either a CSV file, which contains 
 the Earth-centered Earth-fixed (ECEF) user positions, or an NMEA GGA stream.
